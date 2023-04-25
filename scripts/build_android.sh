@@ -40,6 +40,7 @@ done
 
 
 TNN_BUILD_PATH=$PWD
+echo "TNN_BUILD_PATH:$TNN_BUILD_PATH"
 if [ -z $TNN_ROOT_PATH ]
 then
     TNN_ROOT_PATH=$(cd `dirname $0`; pwd)/..
@@ -177,17 +178,17 @@ cd ..
 if [ "$SHARED_LIB" = "ON" ];then
     cp build32/libTNN.so release/armeabi-v7a
     cp build64/libTNN.so release/arm64-v8a
-	echo "TNN_BUILD_PATH v7a so:$(PWD)/release/armeabi-v7a/libTNN.so"
-	echo "TNN_BUILD_PATH v8a so:$(PWD)/release/arm64-v8a/libTNN.so"
+	echo "TNN_BUILD_PATH v7a so:$PWD/release/armeabi-v7a/libTNN.so"
+	echo "TNN_BUILD_PATH v8a so:$PWD/release/arm64-v8a/libTNN.so"
 else
     cp build32/libTNN.a release/armeabi-v7a
     cp build64/libTNN.a release/arm64-v8a
-	echo "TNN_BUILD_PATH v7a so:$(PWD)/release/armeabi-v7a/libTNN.a"
-	echo "TNN_BUILD_PATH v8a so:$(PWD)/release/arm64-v8a/libTNN.a"
+	echo "TNN_BUILD_PATH v7a so:$PWD/release/armeabi-v7a/libTNN.a"
+	echo "TNN_BUILD_PATH v8a so:$PWD/release/arm64-v8a/libTNN.a"
 fi
 echo "show releases"
-ls $(PWD)/release/armeabi-v7a
-ls $(PWD)/release/arm64-v8a
+ls $PWD/release/armeabi-v7a
+ls $PWD/release/arm64-v8a
 
 cp -r ${TNN_ROOT_PATH}/include release
 if [  "$HUAWEI_NPU" == "ON" ]; then
