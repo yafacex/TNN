@@ -8,7 +8,7 @@ STL="c++_static"
 SHARED_LIB="ON"
 ARM="ON"
 ARM82="ON"
-OPENMP="ON"
+OPENMP="OFF"
 OPENCL="ON"
 #HUAWEI_NPU="ON"
 if [ -z "$HUAWEI_NPU" ]; then
